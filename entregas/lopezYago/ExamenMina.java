@@ -2,6 +2,10 @@ import java.util.Scanner;
 
 public class ExamenMina{
 
+	static final int FILAS = 5;
+	static final int COLUMNAS = 7;
+	static final int NUM_MINAS = 5;
+
 	static String[][] mapaMinasMostrar = 	
 		{ 
 			{" ",	"1", 	"2", 	"3", 	"4",	"5",	"6", 	"7"},
@@ -26,13 +30,13 @@ public class ExamenMina{
 	Scanner scan = new Scanner(System.in);
 
 		int i=0;	
-		while ( i < 5){
+		while ( i < NUM_MINAS){
 
-			int PosXMina = (int)(Math.random()*5+1); // filas 1-5
-			int PosYMina = (int)(Math.random()*7+1); // columnas 1-7
+			int PosXMina = (int)(Math.random()*FILAS+1);
+			int PosYMina = (int)(Math.random()*COLUMNAS+1);
 
 			if (mapaMinasActivas[PosXMina][PosYMina].equals("1")){
-				i=i-1; // repetir si ya hay mina
+				i=i-1;
 			}
 			else {
 				mapaMinasActivas[PosXMina][PosYMina]="1";
@@ -58,10 +62,10 @@ public class ExamenMina{
 				System.out.println("Ingrese Y");
 				posX = scan.nextInt();
 
-				if(posX>5){
+				if(posX>FILAS){
 					valoresCorrectos=0;
 				}
-				else if(posY>7){
+				else if(posY>COLUMNAS){
 					valoresCorrectos=0;
 				}
 				else{
@@ -92,5 +96,6 @@ public class ExamenMina{
 		}
 	}	
 }
+
 
 
