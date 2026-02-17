@@ -44,19 +44,15 @@ public class ExamenMina{
 			inputValido=0;
 			while(inputValido==0){
 				System.out.println(" ");
-				System.out.println("Ingrese X");
-				posY = scan.nextInt();
-				System.out.println("Ingrese Y");
+				System.out.println("Ingrese fila (1-5)");
 				posX = scan.nextInt();
+				System.out.println("Ingrese columna (1-7)");
+				posY = scan.nextInt();
 
-				if(posX>FILAS){
-					inputValido=0;
-				}
-				else if(posY>COLUMNAS){
-					inputValido=0;
-				}
-				else{
+				if(posX>=1 && posX<=FILAS && posY>=1 && posY<=COLUMNAS){
 					inputValido=1;
+				}else{
+					System.out.println("Coordenadas fuera de rango");
 				}
 			}
 
