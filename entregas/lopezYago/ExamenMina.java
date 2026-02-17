@@ -13,7 +13,7 @@ public class ExamenMina{
 			{"2", 	"-", 	"-",	"-", 	"-", 	"-", 	"-",	"-"},
 			{"3", 	"-", 	"-", 	"-",	"-", 	"-", 	"-",	"-"},
 			{"4", 	"-", 	"-",	"-", 	"-", 	"-", 	"-",	"-"},
-			{"5", 	"-", 	"-",	"-", 	"-", 	" -", 	"-",	"-"}
+			{"5", 	"-", 	"-",	"-", 	"-", 	"-", 	"-",	"-"}
 		};
 		
 	static String[][] mapaMinasActivas = 	
@@ -29,16 +29,20 @@ public class ExamenMina{
 	public static void main(String[] args){	
 	Scanner scan = new Scanner(System.in);
 
-		colocarMinas(); // NUEVO METODO
+		colocarMinas();
 	
-		int posX=0, posY=0, juegoEncendido=1, valoresCorrectos, contadorMapa=0, contadorMinas=0;
+		int posX=0, posY=0;
+		int juegoActivo=1;
+		int inputValido;
+		int casillasDescubiertas=0;
+		int minasEncontradas=0;
 
-		while(juegoEncendido==1){
+		while(juegoActivo==1){
 
 			mostrarMapa();
 
-			valoresCorrectos=0;
-			while(valoresCorrectos==0){
+			inputValido=0;
+			while(inputValido==0){
 				System.out.println(" ");
 				System.out.println("Ingrese X");
 				posY = scan.nextInt();
@@ -46,19 +50,19 @@ public class ExamenMina{
 				posX = scan.nextInt();
 
 				if(posX>FILAS){
-					valoresCorrectos=0;
+					inputValido=0;
 				}
 				else if(posY>COLUMNAS){
-					valoresCorrectos=0;
+					inputValido=0;
 				}
 				else{
-					valoresCorrectos=1;
+					inputValido=1;
 				}
 			}
 
 			if(mapaMinasActivas[posX][posY].equals("1")){
 				mapaMinasMostrar[posX][posY]="x";
-				contadorMinas++;
+				minasEncontradas++;
 			}
 			else if(mapaMinasActivas[posX][posY].equals("0")){
 				mapaMinasMostrar[posX][posY]=".";
@@ -67,14 +71,15 @@ public class ExamenMina{
 				System.out.println("No es correcta esa opcion.");
 			}
 			
-			contadorMapa++;
-			if(contadorMinas>2){
-				juegoEncendido=0;
+			casillasDescubiertas++;
+
+			if(minasEncontradas>2){
+				juegoActivo=0;
 				System.out.println("Has perdido");
 			}
-			else if(contadorMapa>=31){
+			else if(casillasDescubiertas>=31){
 				System.out.println("Felicidades Ganador!");
-				juegoEncendido=0;
+				juegoActivo=0;
 			}
 		}
 	}
