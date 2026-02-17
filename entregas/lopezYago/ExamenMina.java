@@ -47,12 +47,8 @@ public class ExamenMina{
 		int posX=0, posY=0, juegoEncendido=1, valoresCorrectos, contadorMapa=0, contadorMinas=0;
 
 		while(juegoEncendido==1){
-			for( i = 0; i<mapaMinasMostrar.length; i++){            
-				for (int j = 0; j < mapaMinasMostrar[i].length; j++) {                                     
-					System.out.print(mapaMinasMostrar[i][j]);
-				}
-				System.out.println(" ");
-			}
+
+			mostrarMapa(); // NUEVO METODO
 
 			valoresCorrectos=0;
 			while(valoresCorrectos==0){
@@ -94,8 +90,18 @@ public class ExamenMina{
 				juegoEncendido=0;
 			}
 		}
-	}	
+	}
+
+	public static void mostrarMapa(){
+		for(int i = 0; i<mapaMinasMostrar.length; i++){            
+			for (int j = 0; j < mapaMinasMostrar[i].length; j++) {                                     
+				System.out.print(mapaMinasMostrar[i][j]);
+			}
+			System.out.println(" ");
+		}
+	}
 }
+
 
 
 
