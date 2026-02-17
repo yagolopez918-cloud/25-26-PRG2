@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ExamenMina{
 
 	static String[][] mapaMinasMostrar = 	
-		{ //[0][0]	[0][1]	[0][2]	[0][3]	[0][4]	[0][5]	[0][6]	[0][7]
+		{ 
 			{" ",	"1", 	"2", 	"3", 	"4",	"5",	"6", 	"7"},
 			{"1", 	"-", 	"-", 	"-", 	"-", 	"-", 	"-",	"-"},
 			{"2", 	"-", 	"-",	"-", 	"-", 	"-", 	"-",	"-"},
@@ -43,7 +43,7 @@ public class ExamenMina{
 
 		while(juegoEncendido==1){
 			for( i = 0; i<mapaMinasMostrar.length; i++){            
-				for (int j = 0; j<=mapaMinasMostrar.length+1; j++) {                                     
+				for (int j = 0; j < mapaMinasMostrar[i].length; j++) {                                     
 					System.out.print(mapaMinasMostrar[i][j]);
 				}
 				System.out.println(" ");
@@ -91,3 +91,4 @@ public class ExamenMina{
 		}
 	}	
 }
+
