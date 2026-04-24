@@ -1,5 +1,5 @@
 package entregas.lopezYago;
 
-public class Turnos {
+public class Turno {
     
 }

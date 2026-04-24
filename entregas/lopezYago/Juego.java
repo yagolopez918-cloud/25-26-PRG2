@@ -5,8 +5,7 @@ class Juego{
         Carrera carrera = new Carrera();
         carrera.jugar();
 
-        do{
-            
-        }
+    
+        
     }
  }

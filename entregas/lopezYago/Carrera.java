@@ -4,13 +4,27 @@ public class Carrera {
 
     private Pista pista;
     private Caballo[] caballos;
-    private Turnos turnos;
+    private Turno turno;
+    private int numeroJugadores;
 
-    public Carrera() {
+    public Carrera(int numeroJugadores) {
+        this.numeroJugadores = numeroJugadores;
         pista = new Pista();
-        caballos = new Caballo[2];
-        caballos[0] = new Caballo(1);
-        caballos[1] = new Caballo(2);
-        turnos = new Turnos();
+        caballos = new Caballo[numeroJugadores];
+        for(int i = 0;i<numeroJugadores;i++){
+            caballos[i] = new Caballo(i + 1);
+        }
+    }
+
+    public void jugar() {
+
+        do{
+            pista.mostrar();
+            int numeroJugadores;
+            for(int i = 0;i<numeroJugadores;i++){
+                caballos[i].moverse(pista);
+            }
+        }while(!pista.hayGanadores());
+        pista.mostrarResultadoFinal();
     }
 }
