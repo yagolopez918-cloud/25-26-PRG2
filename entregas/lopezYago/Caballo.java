@@ -6,9 +6,10 @@ public class Caballo {
     public Caballo(int numero) {
         this.numero = numero;
     }
-    
+
     public void moverse(Pista pista) {
-        
+        int avance = (int) (Math.random() * 3);
+        pista.mover(numero - 1, avance); 
     }
     
 }
