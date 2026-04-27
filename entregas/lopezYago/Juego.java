@@ -1,4 +1,4 @@
-package entregas.lopezYago;
+
 
 class Juego{
     public static void main(String[] args) {
