@@ -25,13 +25,17 @@ public class Pista {
         }
     }
 
-    public boolean hayGanador() {
-        return false;
+    public boolean hayGanador(int caballo) {
+        return posiciones[caballo] >= META;
     }
 
     public boolean hayGanadores() {
+        for(int i = 0; i < posiciones.length; i++) {
+            if (this.hayGanador(i)) {
+                return true;
+            }
+        }
         return false;
-
     }
 
     public void mostrar() {
