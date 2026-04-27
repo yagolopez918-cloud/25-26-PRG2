@@ -1,4 +1,4 @@
-
+package entregas.lopezYago;
 
 public class Caballo {
     private int numero;

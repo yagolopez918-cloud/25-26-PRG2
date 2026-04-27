@@ -1,3 +1,5 @@
+package entregas.lopezYago;
+
 public class Carrera {
     private Pista pista;
     private Caballo[] caballos;

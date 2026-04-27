@@ -1,3 +1,5 @@
+package entregas.lopezYago;
+
 public class Pista {
     private int[] posiciones;
     private final int META = 40;
